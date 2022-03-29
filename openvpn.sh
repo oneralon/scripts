@@ -203,7 +203,7 @@ client_remove () {
   if [[ -f $CONFIG ]]; then
     ./easyrsa revoke $CN-$1 && ./easyrsa gen-crl && rm $CONFIG
 
-    systemctl restart openvpn-session@server.service
+    systemctl restart openvpn@server.service
 
     echo "Done";
   else
